@@ -27,7 +27,7 @@ void func(int connfd)
 		bzero(buff, MAX);
 		n = 0;
 		// copy server message in the buffer
-		while ((buff[n++] = getchar()) != '\n')
+		while ((buff[n++] = getchar()) != '#')
 			if(buff[n++] = getchar()) == '\n') {
 				printf("Enter the string : ");
 			}
