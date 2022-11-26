@@ -28,7 +28,7 @@ void func(int connfd)
 		n = 0;
 		// copy server message in the buffer
 		while ((buff[n++] = getchar()) != '#')
-			if(buff[n++] = getchar() == '\n') {
+			if((buff[n++] = getchar()) == '\n') {
 				printf("Enter the string : ");
 			}
 			;

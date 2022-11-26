@@ -19,7 +19,7 @@ void func(int sockfd)
 		printf("Enter the string : ");
 		n = 0;
 		while ((buff[n++] = getchar()) != '#')
-			if(buff[n++] = getchar() == '\n') {
+			if((buff[n++] = getchar()) == '\n') {
 				printf("Enter the string : ");
 			}
 			;
