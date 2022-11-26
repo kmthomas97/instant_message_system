@@ -19,6 +19,9 @@ void func(int sockfd)
 		printf("Enter the string : ");
 		n = 0;
 		while ((buff[n++] = getchar()) != '\n')
+			if(buff[n++] = getchar()) == '\n') {
+				printf("Enter the string : ");
+			}
 			;
 		write(sockfd, buff, sizeof(buff));
 		bzero(buff, sizeof(buff));
@@ -48,7 +51,7 @@ int main()
 
 	// assign IP, PORT
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	servaddr.sin_addr.s_addr = inet_addr("192.168.1.8");
 	servaddr.sin_port = htons(PORT);
 
 	// connect the client socket to server socket
