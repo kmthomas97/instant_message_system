@@ -1,6 +1,28 @@
 # instant_message_system
 
-## Installation steps
+## Configure Environment/WSL (Windows Subsystem for Linux) LINK FOR MORE INFO: https://learn.microsoft.com/en-us/windows/wsl/install
+
+1. In Powershell/Command Prompt Administrator mode enter
+
+`$ wsl --install`
+
+2. Go to https://ubuntu.com/wsl to install Ubuntu on your new WSL
+
+3. Follow installation steps and setup a username and password
+
+4. You should see a prompt once finished enter
+
+`sudo apt update && sudo apt upgrade`
+
+5. type y or yes for any options
+
+6. Install gcc and git
+
+`sudo apt install gcc && sudo apt install git`
+
+7. Congrats, if everything went well you should be done setting up your environment!
+
+## Repository setup steps
 
 ### Theses steps are proven to work on local machine/virtual machine/same network computers(Mac/Windows)
 
