@@ -16,9 +16,9 @@
 
 5. type y or yes for any options
 
-6. Install gcc and git
+6. Install gcc, git, and ssh
 
-`sudo apt install gcc && sudo apt install git`
+`sudo apt install gcc && sudo apt install git && sudo apt install ssh`
 
 7. Congrats, if everything went well you should be done setting up your environment!
 
