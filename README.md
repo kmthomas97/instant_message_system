@@ -40,17 +40,21 @@
 
 ### Client Steps
 
-3. login to client machine (Windows PC)
+1. login to client machine (Windows PC)
 
-4. clone repo to home directory or similar
+2. Open Ubuntu on Windows (e.g. WSL) 
+
+3. clone repo to home directory or similar
 
 `$ cd instant_message_system`
 
-5. WARNING: If the client and server are not on the same network than use the private IP of the Macbook Pro (75.245.171.86), this can be done by uncommenting/commenting lines 54/56 on the client.c file
+4. WARNING: If the client and server are not on the same network than use the private IP of the Macbook Pro (75.245.171.86), this can be done by uncommenting/commenting lines 54/56 on the client.c file
 
 `$ gcc client.c -o client`
 
 `$ ./client`
+
+### Running Steps
 
 6. client initiates 'talking' to server
 
