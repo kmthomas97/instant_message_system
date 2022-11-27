@@ -26,6 +26,8 @@
 
 ### Theses steps are proven to work on local machine/virtual machine/same network computers(Mac/Windows)
 
+### Server Steps
+
 1. login to server machine (Macbook Pro)
 
 2. clone repo to home directory or similar
@@ -35,6 +37,8 @@
 `$ gcc server.c -o server`
 
 `$ ./server`
+
+### Client Steps
 
 3. login to client machine (Windows PC)
 
