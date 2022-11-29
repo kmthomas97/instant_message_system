@@ -23,7 +23,7 @@ void func(int connfd)
 		// read the message from client and copy it in buffer
 		read(connfd, buff, sizeof(buff));
 		// print buffer which contains the client contents
-		printf("[Client]=> %s[Server]=> ", buff);
+		printf("\n[Client]=> %s\n[Server]=> ", buff);
 
 		bzero(buff, MAX);
 

@@ -17,7 +17,7 @@ void func(int sockfd)
 	for (;;) {
 		bzero(buff, sizeof(buff));
 
-		printf("[Client]=> ");
+		printf("\n[Client]=> ");
 
 		bzero(buff, MAX);
 
@@ -41,7 +41,7 @@ void func(int sockfd)
 		write(sockfd, buff, sizeof(buff));
 		bzero(buff, sizeof(buff));
 		read(sockfd, buff, sizeof(buff));
-		printf("[Server]=> %s", buff);
+		printf("\n[Server]=> %s", buff);
 		if ((strncmp(buff, "exit", 4)) == 0) {
 			printf("[Client Exit]\n");
 			break;
