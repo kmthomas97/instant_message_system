@@ -27,6 +27,10 @@ void func(int sockfd)
 			// printf("{buffer:n}:%s:%d", buff, n);
 			if(buff[1] == 'e' && buff[2] == 'x' && buff[3] == 'i' && buff[4] == 't') {
 				// printf("IN HERE CLIENT!");
+				// write to the socket
+				write(sockfd, buff, sizeof(buff));
+				bzero(buff, sizeof(buff));
+				read(sockfd, buff, sizeof(buff));
 				printf("[Client Exit]\n");
 				close(sockfd);
 				exit(0);

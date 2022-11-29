@@ -34,6 +34,9 @@ void func(int connfd)
 			// printf("{buffer:n}:%s:%d", buff, n);
 			if(buff[1] == 'e' && buff[2] == 'x' && buff[3] == 'i' && buff[4] == 't') {
 				// printf("IN HERE SERVER!");
+				write(connfd, buff, sizeof(buff));
+				bzero(buff, MAX);
+				read(connfd, buff, sizeof(buff));
 				printf("[Server Exit]\n");
 				close(connfd);
 				exit(0);
