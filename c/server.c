@@ -23,19 +23,25 @@ void func(int connfd)
 		// read the message from client and copy it in buffer
 		read(connfd, buff, sizeof(buff));
 		// print buffer which contains the client contents
-		printf("From client: %s\t To client : ", buff);
+		printf("[Client]=> %s[Server]=> ", buff);
+
 		bzero(buff, MAX);
+
 		n = 0;
 		// copy server message in the buffer
-		while ((buff[n++] = getchar()) != '\n')
-			;
+		while ((buff[n++] = getchar()) != '\n') {
+			// printf("{buffer}:%s", buff);
+			if(buff[0] == 'e' && buff[1] == 'x' && buff[2] == 'i' && buff[3] == 't') {
+				printf("IN HERE SERVER!");
+			}
+		}
 
 		// and send that buffer to client
 		write(connfd, buff, sizeof(buff));
 
 		// if msg contains "Exit" then server exit and chat ended.
 		if (strncmp("exit", buff, 4) == 0) {
-			printf("Server Exit...\n");
+			printf("[Server Exit]\n");
 			break;
 		}
 	}
@@ -50,11 +56,11 @@ int main()
 	// socket create and verification
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd == -1) {
-		printf("socket creation failed...\n");
+		printf("[Socket Creation Failed]\n");
 		exit(0);
 	}
 	else
-		printf("Socket successfully created..\n");
+		printf("[Socket Created]\n");
 	bzero(&servaddr, sizeof(servaddr));
 
 	// assign IP, PORT
@@ -64,29 +70,29 @@ int main()
 
 	// Binding newly created socket to given IP and verification
 	if ((bind(sockfd, (SA*)&servaddr, sizeof(servaddr))) != 0) {
-		printf("socket bind failed...\n");
+		printf("[Socket Bind Failed]\n");
 		exit(0);
 	}
 	else
-		printf("Socket successfully binded..\n");
+		printf("[Socket Successfully Binded]\n");
 
 	// Now server is ready to listen and verification
 	if ((listen(sockfd, 5)) != 0) {
-		printf("Listen failed...\n");
+		printf("[Listen Failed]\n");
 		exit(0);
 	}
 	else
-		printf("Server listening..\n");
+		printf("[Server Listening]\n");
 	len = sizeof(cli);
 
 	// Accept the data packet from client and verification
 	connfd = accept(sockfd, (SA*)&cli, &len);
 	if (connfd < 0) {
-		printf("server accept failed...\n");
+		printf("[Server Accept Failed]\n");
 		exit(0);
 	}
 	else
-		printf("server accept the client...\n");
+		printf("[Server Accepts The Client]\n");
 
 	// Function for chatting between client and server
 	func(connfd);
